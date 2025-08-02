@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #6a0572, #2e003e);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+    }
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 40px;
+      letter-spacing: 2px;
+      animation: fadeIn 2s ease forwards;
+    }
+    button {
+      background-color: #ff6f91;
+      border: none;
+      padding: 18px 50px;
+      font-size: 1.5rem;
+      border-radius: 35px;
+      cursor: pointer;
+      color: white;
+      box-shadow: 0 8px 15px rgba(255, 111, 145, 0.4);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+    }
+    button:hover {
+      background-color: #ff4a73;
+      transform: scale(1.05);
+      box-shadow: 0 12px 20px rgba(255, 74, 115, 0.6);
+    }
+    p.note {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #f3d1e2;
+      font-style: italic;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    .content {
+  position: relative;
+  z-index: 1; /* Above hearts */
+}
+
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0; /* Behind everything */
+}
+
+.heart {
+  position: absolute;
+  color: #ff91d0;
+  opacity: 0.8;
+  animation: floatUp 5s linear forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+ .hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  color: #ff91d0;
+  opacity: 0.8;
+  animation: floatUp 5s linear forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+ <div class="content">
+  <h1>Happy Birthday to My Love 💖</h1>
+  <p class="note">
+   hathi 7aja sa8ira a3maltha nchlh tafr7ik
+  </p>
+  <button onclick="window.location.href='index.html'">Let's go</button>
+</div>
+
+<div class="hearts"></div>
+
+
+  <div class="hearts"></div>
+
+
+  <script>
+  const heartsContainer = document.querySelector(".hearts");
+
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerText = "💖";
+
+    const size = 10 + Math.random() * 40; // Random size between 10px and 50px
+    heart.style.fontSize = size + "px";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = Math.random() * 100 + "vh"; // Appear anywhere, not just bottom
+    heart.style.animationDuration = 3 + Math.random() * 2 + "s"; // 3-5s float
+
+    heartsContainer.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+
+  setInterval(createHeart, 200); // Create a heart every 200ms
+</script>
+
+
+</body>
+</html>
